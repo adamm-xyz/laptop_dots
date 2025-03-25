@@ -99,6 +99,7 @@ unsetopt nomatch
 
 typeset -U PATH
 
+#when signal is received, switch theme
 TRAPUSR1() {
   source $HOME/.local/bin/scheme_switch
 }
