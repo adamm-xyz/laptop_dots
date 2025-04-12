@@ -1,6 +1,7 @@
 #!/bin/zsh
 hyprshade on blue-light-filter
 sed -i 's/light/dark/' ~/.config/foot/foot.ini
+sed -i 's/light/dark/' ~/.local/bin/lock.sh
 sed -i 's/light/dark/' ~/.config/rofi/config.rasi
 sed -i 's/light/dark/' ~/.config/fuzzel/fuzzel.ini
 sed -i 's/light.css/dark.css/' ~/.config/waybar/style.css

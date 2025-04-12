@@ -1,6 +1,7 @@
 #!/bin/zsh
 sed -i 's/dark/light/' ~/.config/foot/foot.ini
 sed -i 's/dark/light/' ~/.config/rofi/config.rasi
+sed -i 's/dark/light/' ~/.local/bin/lock.sh
 sed -i 's/dark/light/' ~/.config/fuzzel/fuzzel.ini
 sed -i 's/dark.css/light.css/' ~/.config/waybar/style.css
 sed -i "s/scheme=.*/\scheme="light"/" $HOME/.local/bin/scheme_switch
