@@ -1,3 +1,8 @@
+# Skip loading .zshrc in Cursor Agent
+if [[ -n "$CURSOR_TRACE_ID" || "$TERM_PROGRAM" == "vscode" ]]; then
+  return
+fi
+
 # Luke's config for the Zoomer Shell
 source $HOME/.zprofile
 # Enable colors and change prompt:

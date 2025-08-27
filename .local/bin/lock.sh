@@ -1,2 +1,2 @@
 #!/bin/zsh
-swaylock -i ~/Pictures/lightlock.jpg
+swaylock -i ~/Pictures/darklock.jpg
