@@ -82,6 +82,14 @@ lfcd () {
         [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
     fi
 }
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
 bindkey -s '^o' 'lfcd\n'
 
 # Edit line in vim with ctrl-e:
@@ -111,3 +119,7 @@ TRAPUSR1() {
   source $HOME/.local/bin/scheme_switch
 }
 
+# Load API keys on shell startup
+if [[ -f "$HOME/.api_keys" ]]; then
+    source "$HOME/.api_keys"
+fi
