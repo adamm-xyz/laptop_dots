@@ -123,3 +123,7 @@ TRAPUSR1() {
 if [[ -f "$HOME/.api_keys" ]]; then
     source "$HOME/.api_keys"
 fi
+
+__git_files () { 
+    _wanted files expl 'local files' _files     
+}
