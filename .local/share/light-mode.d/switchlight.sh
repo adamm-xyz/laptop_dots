@@ -15,3 +15,4 @@ swaybg -i ~/Pictures/lightbg.jpg -m fill &
 #set GTK theme preference
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
 hyprshade off
+~/.local/bin/qutebrowser-darkmode-toggle.sh light

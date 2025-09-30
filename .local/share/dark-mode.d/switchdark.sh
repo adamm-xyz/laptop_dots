@@ -15,3 +15,5 @@ pkill swaybg
 swaybg -i ~/Pictures/darkbg.jpg -m fill &
 #set GTK theme preference
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+#update qutebrowser
+~/.local/bin/qutebrowser-darkmode-toggle.sh dark

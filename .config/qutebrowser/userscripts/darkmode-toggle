@@ -1,0 +1,33 @@
+#!/bin/bash
+# Qutebrowser userscript to toggle dark mode
+
+# Check if we received an argument
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 {dark|light}"
+    exit 1
+fi
+
+# Check if QUTE_FIFO is set (qutebrowser provides this)
+if [ -z "$QUTE_FIFO" ]; then
+    echo "Error: QUTE_FIFO not set. This script must be run from qutebrowser." >&2
+    exit 1
+fi
+
+# Send the appropriate command to qutebrowser
+case "$1" in
+    dark)
+        echo "set colors.webpage.darkmode.enabled true" >> "$QUTE_FIFO"
+        echo "message-info 'Dark mode enabled'" >> "$QUTE_FIFO"
+        ;;
+    light)
+        echo "set colors.webpage.darkmode.enabled false" >> "$QUTE_FIFO"
+        echo "message-info 'Light mode enabled'" >> "$QUTE_FIFO"
+        ;;
+    *)
+        echo "Error: Invalid argument. Use 'dark' or 'light'" >> "$QUTE_FIFO"
+        echo "message-error 'Invalid argument. Use dark or light'" >> "$QUTE_FIFO"
+        exit 1
+        ;;
+esac
+
+echo "Dark mode set to: $1"
